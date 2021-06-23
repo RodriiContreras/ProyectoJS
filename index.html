@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Java</title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5a525b19e5.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<header>
+    <nav class="nav">
+        <ul class="contenedormenu">
+            <li class="item_menu"><a class="enlace_menu" href="index.html">Productos</a></li>
+            <li class="item_menu"><a class="enlace_menu" href="index.html">About Us</a></li>
+            <li class="item_menu"><a class="enlace_menu" href="index.html"><i class="far fa-keyboard"></i></a></li>
+            <li class="item_menu"><a class="enlace_menu" href="index.html">Servicios</a></li>
+            <li class="item_menu"><a class="enlace_menu" href="index.html">Sucursales</a></li>
+        </ul>
+        <div id="loguearse">
+          <button id="botonlogueo" type="button"><i class="fas fa-user"></i>Iniciar Sesion</button>  
+        </div>
+    </nav>
+</header>
+<body>
+    <a href="#productos" class="arrow"><i class="fas fa-angle-double-down"></i></a>
+    <div id="overlay"></div>
+<div id="contenedorteclado">
+    <h1 id="bienvenidos">Bienvenidos a Gamersnet</h1>
+    <p id="vermas">Ver Más</p>
+</div>
+  <!-- LOGIN -->
+<form action="" method="POST" id="formulariologueo">
+    <div class="form">
+        <h3>Iniciar Sesion</h1>
+        <div class="log">
+            <input type="text" id="formulariologueo_nombreusuario" placeholder="Nombre de Usuario">
+        </div>
+        <div class="log">
+            <input type="text" id="formulariologueo_contrasena" placeholder="Contraseña">
+        </div>
+            <p id="parrafologueo"></p>
+
+            <button onclick="" id="formulariologueo_aceptar" type="button">Loguear</button>
+            <button id="formulariologueo_registrarse" type="button">Registrarse</button>
+            <p></p>
+    </div>
+</form>
+  <!-- LOGIN -->
+  <!-- REGISTRO -->
+<form action="" method="POST" id="registro">
+        <div class="registrodiv">
+            <h4>Registro</h1>
+            <div class="register">
+                <input type="text" id="registro_nombreusuario" placeholder="Nombre de Usuario">
+            </div>
+            <div class="register">
+                <input type="text" id="registro_email" width="500px" placeholder="Email">
+            </div>
+            <div class="register">
+                <input type="text" id="registro_contrasena" placeholder="Contraseña">
+            </div>
+                <button id="registro_register" type="button">Registrarse</button>
+                <button id="registro_luego" type="button">Registrarse Luego</button>
+                <p></p>
+        </div>
+</form>
+  <!-- REGISTRO -->
+
+<div id="opacity"></div>
+
+<div class="fondo">
+    <div class="contenedorproductos">
+        <a name="productos">
+            <h2>Los Mejores juegos del 2020 Aqui</h2>
+        </a>
+    </div>
+    <button type="button" onclick="Listacarrito()" class="btn btn-outline-danger vercarrito">Ver lista carrito<i class="fas fa-shopping-cart"></i></button>
+<div id="jquerycarrito"></div>
+<div class="containerflex">
+       <div class="itemflex_metro">
+           <p>Metro Redux</p>
+           <img id="metro" src="imagenes/metro.png">
+         <button type="button" onclick="AgregarACarrito()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+        </div>
+       <div class="itemflex_resident">
+           <p>Resident Evil 3 </p>
+           <img id="resident" src="imagenes/residentevil.jpg">
+           <button type="button" onclick="AgregarACarrito2()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+        </div>
+
+        <div class="itemflex_detroit">
+           <p>Detroit</p>
+           <img id="detroit" src="imagenes/detroit.jpg">
+           <button type="button" onclick="AgregarACarrito3()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+    </div>
+    <div class="itemflex_uncharted">
+        <p>Uncharted 4</p>
+        <img id="uncharted" src="imagenes/uncharted4.png">
+        <button type="button"  onclick="AgregarACarrito4()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+ </div>
+   <div class="itemflex_callofduty">
+      <p>Call of duty</p>
+      <img id="cod" src="imagenes/callofduty.jpg">
+      <button type="button" onclick="AgregarACarrito5()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+  </div>
+ <div class="itemflex_tlou">
+    <p>Last Of Us II</p>
+    <img id="tlou" src="imagenes/tlou.jpg">
+    <button type="button" onclick="AgregarACarrito6()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+</div>
+<div class="itemflex_reddead">
+    <p>Red Dead Redemption</p>
+    <img id="reddead" src="imagenes/reddead.jpg">
+    <button type="button" onclick="AgregarACarrito7()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+</div>
+<div class="itemflex_sekiro">
+    <p>Sekiro Shadows Die Twice</p>
+    <img id="sekiro" src="imagenes/sekiro.jpg">
+    <button type="button" onclick="AgregarACarrito8()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+</div>
+<div class="itemflex_starwars">
+    <p>Star Wars Fallen Order</p>
+    <img id="starwars" src="imagenes/starwars.jpg">
+    <button type="button" onclick="AgregarACarrito9()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+</div>
+<div class="itemflex_ghost">
+    <p>Ghost Of Tsushima</p>
+    <img id="ghost" src="imagenes/ghost.jpg">
+    <button type="button" onclick="AgregarACarrito10()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+</div>
+</div>
+<div  id="cartelcarrito">
+    <p id="parrafocarrito">Se ha agregado al carrito<i class="fas fa-shopping-cart"></i></p>
+</div>
+<div id="footer">
+   <a href="https://www.instagram.com/?hl=es-la"><i class="fab fa-instagram redes"></i></a>
+   <a href="https://www.facebook.com/"><i class="fab fa-facebook redes"></i></a>
+   <a href="https://www.twitter.com"><i class="fab fa-twitter redes"></i></a>
+   <p class="derechos">© Rodrigo Contreras | 2021 Derechos reservados.</p>
+</div>
+</div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
+
+<!--   <button type="button" class="btn btn-danger comprar">Comprar<i class="fas fa-shopping-cart"></button> -->
