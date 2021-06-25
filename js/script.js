@@ -388,7 +388,7 @@ if(innerWidth < 1680){
    document.getElementById("cartelcarrito").style.width=("250px");
    document.getElementById("cartelcarrito").style.position=("absolute");
    document.getElementById("cartelcarrito").style.top=('106vh');
-}
+  }
 else (innerWidth < 1300)
   document.getElementById("cartelcarrito").style.width=("250px");
   document.getElementById("cartelcarrito").style.position=("absolute");
@@ -403,17 +403,9 @@ $(document).ready(function carrito(){
 //const TodosLosJuegos = [{}]
 //----------------------
 
-function Lisstacarrito(){
-   document.getElementById("jquerycarrito").style.visibility=("visible");
-  console.log(productosJuegos);
-  for(const producto of productosJuegos){
-    $("#productoscarrito").append(`<h2>${productosJuegos.forEach(juego =>{
-    })}</h2>`)
-    } }
-    Lisstacarrito();
-    function Listacarrito(){
-      document.getElementById("jquerycarrito").style.visibility=("visible");
-     console.log(productosJuegos);
+function Listacarrito(){
+  document.getElementById("jquerycarrito").style.visibility=("visible");
+ console.log(productosJuegos);
 
-    }
+}
 //----------------------
