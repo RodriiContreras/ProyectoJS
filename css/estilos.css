@@ -45,11 +45,13 @@ body{
 #botonlogueo{
     width: 160px;
     background-color: black;
+    font-weight: bolder;
     color: red;
     font-size: 20px;
     border: 1px solid black;
 }
 
+/* Carrito */
 #jquerycarrito{
     background-color: white;
     text-align: center;
@@ -62,9 +64,17 @@ body{
 #jquerycarrito h5{
  text-align: center;
 }
-#productoscarrito{
-    height: 82vh;
+#jquerycarrito button{
+    padding-bottom: 5px;
 }
+#jquerycarrito_carrito{
+    font-size: 30px;
+}
+#productoscarrito{
+    height: 83vh;
+}
+/* Carrito */
+
 /* boton logueo */
 /* MENU */
 /* SECCION TECLADO*/
@@ -119,15 +129,19 @@ background-color: rgba(0, 0, 0, 0.404);
 
 /* Login */
 #formulariologueo{
+    border-radius: 5%;
     position: absolute;
     top: 35vh;
     left: 40%;
     width: 400px;
-    height: 230px;
+    height: 280px;
     border: 1px solid black;
     background-color: white;
     text-align: center;
     visibility: hidden;
+}
+#formulariologueo h3{
+padding-top: 30px;
 }
 #formulariologueo_aceptar{
     width: 130px;
@@ -141,21 +155,33 @@ background-color: rgba(0, 0, 0, 0.404);
 #parrafologueo{
   text-align: center;
 }
+.log_input{
+    width: 300px;
+}
+
 /* Login */
 /* Register */
 #registro{
+    height: 300px;
     top: 35vh;
     left: 42%;
     text-align: center;
     position: absolute;
     background-color: blanchedalmond;
-    width: 270px;
+    width: 370px;
     z-index: +4000;
     visibility: hidden;
     border: 1px solid black;
 }
+#registro h4{
+    padding-top: 10px;
+    font-weight: bolder;
+}
 .register{
     padding: 10px;
+}
+.register_input{
+    width: 300px;
 }
 #registro_register{
     width: 100px;
@@ -482,10 +508,10 @@ top: 15px;
     position: absolute;
     background-color: rgb(173, 21, 21);
     border: 1px solid black;
-    width: 350px;
+    width: 250px;
     height: 100px;
-    top: 180vh;
-    left: 80%;
+    top: 170vh;
+    left: 10px;
 }
 #parrafocarrito{
     position: relative;

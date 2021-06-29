@@ -37,17 +37,17 @@
   <!-- LOGIN -->
 <form action="" method="POST" id="formulariologueo">
     <div class="form">
-        <h3>Iniciar Sesion</h1>
+        <h3>Iniciar Sesion</h3>
         <div class="log">
-            <input type="text" id="formulariologueo_nombreusuario" placeholder="Nombre de Usuario">
+            <input class="log_input" type="text" id="formulariologueo_nombreusuario" minlength="3" placeholder="Nombre de Usuario">
         </div>
         <div class="log">
-            <input type="text" id="formulariologueo_contrasena" placeholder="Contraseña">
+            <input class="log_input"  type="text" id="formulariologueo_contrasena" minlength="3" placeholder="Contraseña">
         </div>
             <p id="parrafologueo"></p>
 
-            <button onclick="" id="formulariologueo_aceptar" type="button">Loguear</button>
-            <button id="formulariologueo_registrarse" type="button">Registrarse</button>
+            <button class="btn btn-outline-success" onclick="" id="formulariologueo_aceptar" type="button">Loguear</button>
+            <button class="btn btn-outline-success" id="formulariologueo_registrarse" type="button">Registrarse</button>
             <p></p>
     </div>
 </form>
@@ -55,19 +55,20 @@
   <!-- REGISTRO -->
 <form action="" method="POST" id="registro">
         <div class="registrodiv">
-            <h4>Registro</h1>
+            <h4>REGISTRO</h1>
             <div class="register">
-                <input type="text" id="registro_nombreusuario" placeholder="Nombre de Usuario">
+                <input class="register_input" type="text" id="registro_nombreusuario" minlength="3" placeholder="Nombre de Usuario">
             </div>
             <div class="register">
-                <input type="text" id="registro_email" width="500px" placeholder="Email">
+                <input class="register_input" type="text" id="registro_email" width="500px" placeholder="Email">
             </div>
             <div class="register">
-                <input type="text" id="registro_contrasena" placeholder="Contraseña">
+                <input class="register_input" type="text" id="registro_contrasena" minlength="3" placeholder="Contraseña">
             </div>
-                <button id="registro_register" type="button">Registrarse</button>
-                <button id="registro_luego" type="button">Registrarse Luego</button>
-                <p></p>
+            <p id="register_parrafo"></p>
+                <button class="btn btn-dark" id="registro_register" type="button">Registrarse</button>
+                <button class="btn btn-dark" id="registro_luego" type="button">Registrarse Luego</button>
+                
         </div>
 </form>
   <!-- REGISTRO -->
