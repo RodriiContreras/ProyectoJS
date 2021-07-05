@@ -96,6 +96,7 @@ else if (document.getElementById("registro_contrasena").value == length > 1 ){
   document.getElementById("register_parrafo").style.color=("red")
 }
 else{
+  
   document.getElementById("registro").style.visibility=("hidden");
   document.getElementById("formulariologueo").style.visibility=("visible")
   document.getElementById("formulariologueo").style.zIndex=("+4000")
@@ -171,22 +172,12 @@ const almacenadorlog = []
 //-----------------------------------VALIDACION-------------------------- 
 
 //rgba(0, 0, 0, 0.404)rgba(0, 0, 0, 0.747)
-function prueba(){
-Swal.fire({
-  title: "Bienvenidos a Gamersnet!",
-  text:"Esperamos que disfrute de esta pagina web"
-});
-}
-
-var logueo= document.getElementById("bienvenidos");
-logueo.addEventListener("mouseover", prueba);
 
 // -----------------------------Login ----------------------------
 class Juegos {
-    constructor (nombre, precio,imagen) {
+    constructor (nombre, precio) {
         this.nombre  = nombre;
         this.precio  = parseFloat(precio);
-        this.imagen = imagen    
       }
 }
 const juego1 = new Juegos("Metro Redux ", "2000")
@@ -218,7 +209,8 @@ console.log(textoCartel.innerText);
 function AgregarACarrito(){
 productosJuegos.push(new Juegos(juego1.nombre , juego1.precio * 1.21));
 console.log (JSON.stringify("Se ha agregado el juego= " + juego1.nombre + " al precio de " + juego1.precio * 1.21 + " (Incluyendo IVA)"));
- $("#productoscarrito").append(`<img id="metroredux" src="../imagenes/metro.png"><h2 id="juego1">${juego1.nombre + juego1.precio * 1.21}</h2>`);
+ $("#productoscarrito").append(`<div id="productoscarrito_item2">
+ <img id="metroredux" src="../imagenes/metro.png"><h2 id="juego1">${juego1.nombre + "$"+ juego1.precio * 1.21}</h2></div>`);
 
 if(productosJuegos.push){
   textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego1.nombre;
@@ -239,8 +231,8 @@ function AgregarACarrito2(){
  productosJuegos.push(new Juegos(juego2.nombre, juego2.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego2.nombre + " al precio de " + juego2.precio * 1.21 + " (Incluyendo IVA)"));
 
- $("#productoscarrito").append(`<img id="residentevil" src="../imagenes/residentevil.jpg">
-<h2 id="juego2">${juego2.nombre + blanco +  juego2.precio}</h2>
+ $("#productoscarrito").append(`<div id="productoscarrito_item"><img id="residentevil" src="../imagenes/residentevil.jpg">
+<h2 id="juego2">${juego2.nombre + blanco + "$"+ juego2.precio}</h2></div>
 `);
 
 if(productosJuegos.push){
@@ -257,15 +249,15 @@ if(productosJuegos.push){
 function AgregarACarrito3(){
 productosJuegos.push(new Juegos(juego3.nombre, juego3.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego3.nombre + " al precio de " + juego3.precio * 1.21 + " (Incluyendo IVA)"));
- $("#productoscarrito").append(`<img id="carrito_detroit" src="../imagenes/detroit.jpg"">
-<h2 id="juego3">${juego3.nombre + blanco +juego3.precio * 1.21}</h2>
+ $("#productoscarrito").append(`<div id="productoscarrito_item3"><img id="carrito_detroit" src="../imagenes/detroit.jpg"">
+<h2 id="juego3">${juego3.nombre + blanco +"$" +juego3.precio * 1.21}</h2></div>
 `);
 if(productosJuegos.push){
   textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego3.nombre;
   textoCartel = document.getElementById("parrafocarrito").style.fontSize=("17px");
   mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("visible")
-  mostrarCartel = document.getElementById("cartelcarrito").style.color=("black")
-  mostrarCartel = document.getElementById("cartelcarrito").style.background=("green");
+  mostrarCartel = document.getElementById("cartelcarrito").style.color=("white")
+  mostrarCartel = document.getElementById("cartelcarrito").style.background=("blue");
   mostrarCartel = document.getElementById("cartelcarrito").style.border=(" 1px solid white")
  
   setTimeout(function borrarelemento(){
@@ -278,8 +270,8 @@ function AgregarACarrito4(){
 productosJuegos.push(new Juegos(juego4.nombre, juego4.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego4.nombre + " al precio de " + juego4.precio * 1.21 + " (Incluyendo IVA)"));
 
- $("#productoscarrito").append(`<img id="carrito_uncharted" src="../imagenes/uncharted4.png">
-<h2 id="juego4">${juego4.nombre +blanco + juego4.precio * 1.21}</h2>
+ $("#productoscarrito").append(`<div id="productoscarrito_item4"><img id="carrito_uncharted" src="../imagenes/uncharted4.png">
+<h2 id="juego4">${juego4.nombre +blanco + "$"+juego4.precio * 1.21}</h2></div>
 `);
 
 if(productosJuegos.push){
@@ -298,8 +290,8 @@ if(productosJuegos.push){
 function AgregarACarrito5(){
 productosJuegos.push(new Juegos(juego5.nombre, juego5.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego5.nombre + " al precio de " + juego5.precio * 1.21 + " (Incluyendo IVA)"));
- $("#productoscarrito").append(`<img id="carrito_cod" src="../imagenes/callofduty.jpg">
-<h2 id="juego5">${juego5.nombre +blanco+ juego5.precio}</h2>
+ $("#productoscarrito").append(`<div id="productoscarrito_item5"><img id="carrito_cod" src="../imagenes/callofduty.jpg">
+<h2 id="juego5">${juego5.nombre +blanco+"$"+ juego5.precio}</h2></div>
 `);
 if(productosJuegos.push){
 textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego5.nombre;
@@ -316,8 +308,8 @@ setTimeout(function borrarelemento(){
 function AgregarACarrito6(){
 productosJuegos.push(new Juegos(juego6.nombre, juego6.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego6.nombre + " al precio de " + juego6.precio * 1.21 + " (Incluyendo IVA)"));
- $("#productoscarrito").append(`<img id="carrito_tlou" src="../imagenes/tlou.jpg">
-<h2 id="juego6">${juego6.nombre +blanco+ juego6.precio * 1.21}</h2>
+ $("#productoscarrito").append(`<div id="productoscarrito_item6"><img id="carrito_tlou" src="../imagenes/tlou.jpg">
+<h2 id="juego6">${juego6.nombre +blanco+"$"+ juego6.precio * 1.21}</h2></div>
 `);
 if(productosJuegos.push){
 textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego6.nombre;
@@ -334,11 +326,30 @@ setTimeout(function borrarelemento(){
 function AgregarACarrito7(){
 productosJuegos.push(new Juegos(juego7.nombre, juego7.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego7.nombre + " al precio de " + juego7.precio * 1.21 + " (Incluyendo IVA)"));
- $("#productoscarrito").append(`<img id="carrito_reddead" src="../imagenes/reddead.jpg">
-<h2 id="juego7">${juego7.nombre +blanco + juego7.precio * 1.21}</h2>
+ $("#productoscarrito").append(`<div id="productoscarrito_item7"><img id="carrito_reddead" src="../imagenes/reddead.jpg">
+<h2 id="juego7">${juego7.nombre +blanco +"$" +juego7.precio * 1.21}</h2></div>
 `);
 if(productosJuegos.push){
 textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego7.nombre;
+mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("visible");
+mostrarCartel = document.getElementById("cartelcarrito").style.color=("white");
+mostrarCartel = document.getElementById("cartelcarrito").style.border=(" 1px solid white");
+mostrarCartel = document.getElementById("cartelcarrito").style.background=("black");
+
+setTimeout(function borrarelemento(){
+  mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("hidden")
+}, 600);
+}
+
+}
+function AgregarACarrito8(){
+productosJuegos.push(new Juegos(juego8.nombre, juego8.precio * 1.21));
+console.log(JSON.stringify("Se ha agregado el juego= " + juego8.nombre + " al precio de " + juego8.precio * 1.21 + " (Incluyendo IVA)"));
+ $("#productoscarrito").append(`<div id="productoscarrito_item8"><img id="carrito_sekiro" src="../imagenes/sekiro.jpg">
+<h2 id="juego8">${juego8.nombre + blanco +"$"+juego8.precio * 1.21}</h2></div>
+`);
+if(productosJuegos.push){
+textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego8.nombre;
 mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("visible");
 mostrarCartel = document.getElementById("cartelcarrito").style.color=("white");
 mostrarCartel = document.getElementById("cartelcarrito").style.border=(" 1px solid white");
@@ -350,30 +361,11 @@ setTimeout(function borrarelemento(){
 }
 
 }
-function AgregarACarrito8(){
-productosJuegos.push(new Juegos(juego8.nombre, juego8.precio * 1.21));
-console.log(JSON.stringify("Se ha agregado el juego= " + juego8.nombre + " al precio de " + juego8.precio * 1.21 + " (Incluyendo IVA)"));
- $("#productoscarrito").append(`<img id="carrito_sekiro" src="../imagenes/sekiro.jpg">
-<h2 id="juego8">${juego8.nombre + blanco +juego8.precio * 1.21}</h2>
-`);
-if(productosJuegos.push){
-textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego8.nombre;
-mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("visible");
-mostrarCartel = document.getElementById("cartelcarrito").style.color=("black");
-mostrarCartel = document.getElementById("cartelcarrito").style.border=(" 1px solid white");
-mostrarCartel = document.getElementById("cartelcarrito").style.background=("green");
-
-setTimeout(function borrarelemento(){
-  mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("hidden")
-}, 600);
-}
-
-}
 function AgregarACarrito9(){
 productosJuegos.push(new Juegos(juego9.nombre, juego9.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego9.nombre + " al precio de " + juego9.precio * 1.21 + " (Incluyendo IVA)"));
-  $("#productoscarrito").append(`<img id="carrito_starwars" src="../imagenes/starwars.jpg">
-<h2 id="juego9">${juego9.nombre + blanco +juego9.precio * 1.21}</h2>
+  $("#productoscarrito").append(`<div id="productoscarrito_item9"><img id="carrito_starwars" src="../imagenes/starwars.jpg">
+<h2 id="juego9">${juego9.nombre + blanco +"$"+juego9.precio * 1.21}</h2></div>
 `);
 if(productosJuegos.push){
 textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego9.nombre;
@@ -391,8 +383,8 @@ setTimeout(function borrarelemento(){
  function AgregarACarrito10(){
   productosJuegos.push(new Juegos(juego10.nombre, juego10.precio * 1.21));
   console.log(JSON.stringify("Se ha agregado el juego= " + juego10.nombre + " al precio de " + juego10.precio * 1.21 + " (Incluyendo IVA)"));
-  $("#productoscarrito").append(`<img id="carrito_ghost" src="../imagenes/ghost.jpg">
-<h2 id="juego9">${juego10.nombre + blanco +juego10.precio * 1.21}</h2>
+  $("#productoscarrito").append(`<div id="productoscarrito_item10"><img id="carrito_ghost" src="../imagenes/ghost.jpg">
+<h2 id="juego9">${juego10.nombre + blanco +"$"+juego10.precio * 1.21}</h2></div>
 `);
   if(productosJuegos.push){
   textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego10.nombre;
@@ -422,17 +414,30 @@ else (innerWidth < 1300)
 )
 
 $(document).ready(function carrito(){
-  $("#jquerycarrito").append(`<div id="nombreproducto"><h1>Su Carrito<i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:</h1></div>
-  <div id="productoscarrito"></div>
-  <button type="Button" id="vaciarcarrito" class="btn btn-success" onclick="Vaciarcarrito()">Vaciar Carrito</button>
-  <button type="Button" id="cerrarcarrito" class="btn btn-success" onclick="Cerrarcarrito()">Cerrar Carrito</button>`);
+  $("#jquerycarrito").append(`
+<div id="containercarrito">
+  <div id="nombreproducto">
+            <h1>Su Carrito
+            <i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:
+            </h1>
+  </div>
+     <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito</button> 
+     <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="">Realizar compra</button> 
+     <button type="Button" id="cerrarcarrito" class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
+   <div id="productoscarrito">
+   </div>
+</div>
+  
+`);
  
 })
-//const TodosLosJuegos = [{}]
+
 //----------------------
 
 function Listacarrito(){
   document.getElementById("jquerycarrito").style.visibility=("visible");
+  document.getElementById("jquerycarrito").style.zIndex=("+1450");
+  document.getElementById("fondo").style.zIndex=("-509")
  console.log(productosJuegos);
 
 }
@@ -449,12 +454,57 @@ function Vaciarcarrito(){
 
     function Listacarrito(){
      
-      document.getElementById("jquerycarrito").style.visibility=("visible");
+     document.getElementById("jquerycarrito").style.visibility=("visible");
     }
 
 
     function Cerrarcarrito(){
       document.getElementById("jquerycarrito").style.visibility=("hidden");
     }
-    //----------------------
+    ///------BOTON API----
+//const URLGET = "https://api.rawg.io/api/platforms?key=a5c1bd60a8b349218f8f35b843dcaaa7"
+const URLGET = "https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7"
+const data = [];
 
+
+
+
+$(document).ready(function(){
+  obtenerdatos()
+});
+
+
+//function obtenerdatos(){
+//$.get("https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7").done(function(resultado,estado){
+//console.log(estado);
+//console.log(resultado)
+//if (estado == "success"){
+//  let datos = resultado.results;
+//console.log(datos)
+//
+//  datos.forEach(Juegosapi => {
+// $("#parrafos_api").append( "<tr><td>" + Juegosapi.name +"</td><td>" +Juegosapi.id + "</td></tr>")
+//});
+//}
+//})
+//}
+
+
+$("#boton_api").click( () =>{
+  $.get("https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7").done(function(resultado,estado){
+if (estado == "success"){
+  //document.getElementById("fondo").style.height=("150vh")
+
+  document.getElementById("tablaa_api").style.visibility=("visible");
+  document.getElementById("tablaa_api").style.display=("table")
+let datos = resultado.results;
+  datos.forEach(Juegosapi => {
+    $("#tbody_api").append(`<tr>
+    <th scope="row">${Juegosapi.id}</th>
+    <td>${Juegosapi.name}</td>
+    <td> <i id="estrellitas_api"class="fas fa-star"> </i>${Juegosapi.rating}</td>
+  </tr>`)
+   });
+   }
+  })
+})

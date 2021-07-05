@@ -75,77 +75,103 @@
 
 <div id="opacity"></div>
 
-<div class="fondo">
+<div id="fondo">
     <div class="contenedorproductos">
         <a name="productos">
-            <h2>Los Mejores juegos del 2020 Aqui</h2>
+            <h2>Los Mejores juegos del 2020</h2>
         </a>
     </div>
-    <button type="button" onclick="Listacarrito()" class="btn btn-outline-danger vercarrito">Ver lista carrito<i class="fas fa-shopping-cart"></i></button>
+    <button type="button" onclick="Listacarrito()" class="btn btn-primary vercarrito">Ver lista carrito<i class="fas fa-shopping-cart"></i></button>
 <div id="jquerycarrito"></div>
 <div class="containerflex">
        <div class="itemflex_metro">
            <p>Metro Redux</p>
+           <p>Precio:$2000</p>
            <img id="metro" src="imagenes/metro.png">
-         <button type="button" onclick="AgregarACarrito()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+         <button type="button" onclick="AgregarACarrito()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
         </div>
        <div class="itemflex_resident">
            <p>Resident Evil 3 </p>
+           <p>Precio:$2500</p>
            <img id="resident" src="imagenes/residentevil.jpg">
-           <button type="button" onclick="AgregarACarrito2()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+           <button type="button" onclick="AgregarACarrito2()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
         </div>
 
         <div class="itemflex_detroit">
            <p>Detroit</p>
+           <p>Precio:$2700</p>
            <img id="detroit" src="imagenes/detroit.jpg">
-           <button type="button" onclick="AgregarACarrito3()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+           <button type="button" onclick="AgregarACarrito3()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
     </div>
     <div class="itemflex_uncharted">
         <p>Uncharted 4</p>
+        <p>Precio:$2500</p>
         <img id="uncharted" src="imagenes/uncharted4.png">
-        <button type="button"  onclick="AgregarACarrito4()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+        <button type="button"  onclick="AgregarACarrito4()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
  </div>
    <div class="itemflex_callofduty">
       <p>Call of duty</p>
+      <p>Precio:$2000</p>
       <img id="cod" src="imagenes/callofduty.jpg">
-      <button type="button" onclick="AgregarACarrito5()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+      <button type="button" onclick="AgregarACarrito5()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
   </div>
  <div class="itemflex_tlou">
     <p>Last Of Us II</p>
+    <p>Precio:$2500</p>
     <img id="tlou" src="imagenes/tlou.jpg">
-    <button type="button" onclick="AgregarACarrito6()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+    <button type="button" onclick="AgregarACarrito6()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
 </div>
 <div class="itemflex_reddead">
     <p>Red Dead Redemption</p>
+    <p>Precio:$2500</p>
     <img id="reddead" src="imagenes/reddead.jpg">
-    <button type="button" onclick="AgregarACarrito7()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+    <button type="button" onclick="AgregarACarrito7()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
 </div>
 <div class="itemflex_sekiro">
     <p>Sekiro Shadows Die Twice</p>
+    <p>Precio:$2500</p>
     <img id="sekiro" src="imagenes/sekiro.jpg">
-    <button type="button" onclick="AgregarACarrito8()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+    <button type="button" onclick="AgregarACarrito8()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
 </div>
 <div class="itemflex_starwars">
     <p>Star Wars Fallen Order</p>
+    <p>Precio:$3000</p>
     <img id="starwars" src="imagenes/starwars.jpg">
-    <button type="button" onclick="AgregarACarrito9()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+    <button type="button" onclick="AgregarACarrito9()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
 </div>
 <div class="itemflex_ghost">
     <p>Ghost Of Tsushima</p>
+    <p>Precio:$3500</p>
     <img id="ghost" src="imagenes/ghost.jpg">
-    <button type="button" onclick="AgregarACarrito10()" class="btn btn-outline-danger comprar">Comprar<i class="fas fa-shopping-cart"></i></button>
+    <button type="button" onclick="AgregarACarrito10()" class="btn btn-primary comprar">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
 </div>
 </div>
 <div  id="cartelcarrito">
     <p id="parrafocarrito">Se ha agregado al carrito<i class="fas fa-shopping-cart"></i></p>
 </div>
+<button id="boton_api" class="btn btn-outline-danger">PROXIMAMENTE</button>
+<table id="tablaa_api" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id del juego</th>
+        <th scope="col">Nombre del juego</th>
+        <th scope="col">Su rating</th>
+      </tr>
+    </thead>
+    <tbody id="tbody_api">
+
+    </tbody>
+  </table>
+<div id="parrafos_api"></div>
+
 <div id="footer">
-   <a href="https://www.instagram.com/?hl=es-la"><i class="fab fa-instagram redes"></i></a>
-   <a href="https://www.facebook.com/"><i class="fab fa-facebook redes"></i></a>
-   <a href="https://www.twitter.com"><i class="fab fa-twitter redes"></i></a>
-   <p class="derechos">© Rodrigo Contreras | 2021 Derechos reservados.</p>
+    <a href="https://www.instagram.com/?hl=es-la"><i class="fab fa-instagram redes"></i></a>
+    <a href="https://www.facebook.com/"><i class="fab fa-facebook redes"></i></a>
+    <a href="https://www.twitter.com"><i class="fab fa-twitter redes"></i></a>
+    <p class="derechos">© Rodrigo Contreras | 2021 Derechos reservados.</p>
+ </div>
 </div>
-</div>
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"

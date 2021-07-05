@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 body{
     font-family: 'Open Sans', sans-serif;
@@ -13,7 +13,7 @@ body{
 }
 .contenedormenu{
     display: flex;
-    background-color: black;
+background-color: black;
     width: 100%;
     height: 10vh;
     margin:0;
@@ -53,12 +53,15 @@ body{
 
 /* Carrito */
 #jquerycarrito{
+    border:1px solid black;
     background-color: white;
     text-align: center;
-    width:281.5px;
+    height: 700px;
+    width:581.5px;
     position: absolute;
-    left: 85%;
-    top: 100vh;
+    z-index: 8000;
+    left: 35%;
+    top: 115vh;
     visibility: hidden;
 }
 #jquerycarrito h5{
@@ -71,8 +74,73 @@ body{
     font-size: 30px;
 }
 #productoscarrito{
-    height: 83vh;
+    height: 49vh;
+    display: flex;
+    flex-wrap: wrap;
 }
+#productoscarrito div{
+    padding-left: 3px;
+}
+
+#productoscarrito_item2{
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item{
+    padding-top: 3px;
+width: 100px;
+height: 90px;
+padding-left: 3px;
+ }
+ #productoscarrito_item3{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item4{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item5{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item6{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item7{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item8{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item9{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
+ #productoscarrito_item10{
+    padding-top: 5px;
+width: 100px;
+height: 100px;
+padding-left: 3px;
+ }
 /* Carrito */
 
 /* boton logueo */
@@ -193,25 +261,28 @@ padding-top: 30px;
     text-align: center;
 }
 .contenedorproductos h2{
-    color: white;
+    color: black;
     font-size: 55px;
-z-index: 100;
+z-index: 400;
 }
 #opacity{
-    background-color: rgba(44, 41, 41, 0.466);
+    background-color: rgba(44, 41, 41, 0.486);
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 97vh;
     z-index: -100;
 }
-.fondo{
-background-image: url("../imagenes/spiderman.jpg");
-background-repeat: no-repeat;
-background-size:cover ;
-height: 100vh;
+#fondo{
+ background-image: url("../imagenes/spiderman.jpg"); 
+ background-repeat: no-repeat; 
+ background-size:cover ; 
+  
+height: 97vh;
+/* background: linear-gradient(rgba(129, 198, 207, 0.63),white); */
+
 }
 .containerflex{
-    z-index: 100;
+    z-index: +400;
     position: relative;
     display: flex;
     left: 15%;
@@ -219,12 +290,12 @@ height: 100vh;
     height: 80vh;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-top:60px;
+    padding-top:35px;
 }
 .containerflex div{
     background-color: white;
     border: 1px solid black;
-    border-radius: 3%;
+    border-radius:1%;
     padding: 35px;
     margin-top: 4px;
 }
@@ -245,11 +316,11 @@ height: 100vh;
     height: auto;
 }
 #juego1{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #metroredux{
-    width: 100px;
+    width: 105px;
 }
 /* ---------------------*/
 
@@ -257,15 +328,15 @@ height: 100vh;
     font-weight: bolder;
     font-size: 20px;
     text-align: center;
-    width:210px;
+    width:240px;
 }
 .itemflex_resident img{
     width: 150px;
     height: auto;
 }
 #juego2{
-    font-size: 20px;
-    width: 280px;
+    font-size:15px;
+    width: 100px;
 }
 #residentevil{
     width: 100px;
@@ -282,8 +353,8 @@ height: 100vh;
     height: auto;
 }
 #juego4{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_uncharted{
     width: 100px;
@@ -302,8 +373,8 @@ height: 100vh;
     height: auto;
 }
 #juego3{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_detroit{
     width: 100px;
@@ -333,8 +404,8 @@ height: 100vh;
     height: auto;
 }
 #juego5{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_cod{
     width: 100px;
@@ -356,11 +427,11 @@ position: relative;
 top: 15px;
 }
 #juego6{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_tlou{
-    width: 100px;
+    width: 85px;
 }
 
 /* ---------------------*/
@@ -375,6 +446,7 @@ top: 15px;
     bottom: 25px;
     margin: 0;
     width: 150px;
+    left: 20px;
 }
 .itemflex_reddead img{
     position: relative;
@@ -386,8 +458,8 @@ top: 15px;
     position: relative;
 }
 #juego7{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_reddead{
     width: 100px;
@@ -415,8 +487,8 @@ top: 15px;
     position: relative;
 }
 #juego8{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_sekiro{
     width: 100px;
@@ -430,6 +502,7 @@ top: 15px;
 .itemflex_starwars p{
     position: relative;
    bottom: 25px;
+   left: 20px;
     text-align: center;
     width: 120px;
     padding: 0;
@@ -442,8 +515,8 @@ top: 15px;
     height: 190px;
 }
 #juego9{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_starwars{
     width: 100px;
@@ -458,6 +531,7 @@ top: 15px;
 .itemflex_ghost p{
     position: relative;
     width: 5px;
+    left: 20px;
     bottom: 20px;
     text-align: center;
     width: 120px;
@@ -471,8 +545,8 @@ top: 15px;
     height: auto;
 }
 #juego10{
-    font-size: 20px;
-    width: 280px;
+    font-size: 15px;
+    width: 100px;
 }
 #carrito_ghost{
     width: 100px;
@@ -481,19 +555,16 @@ top: 15px;
 .comprar{ 
     display: block;
     position: relative;
-    left: 20%;
+    left: 5%;
     top: 5px;
     text-decoration: none;
-    background-color: black;
     color: rgb(233, 231, 231);
     font-weight: bolder;
-
-}
-
-.comprar:hover {
-    transition: .5s;
     color: black;
+
 }
+
+
 .vercarrito{
     position: absolute;
  top: 101vh;
@@ -611,6 +682,28 @@ top: 15px;
         margin-top: 250px;
       }
 }
-
+/* SECCION API*/
+#boton_api{
+    position: relative;
+    top: 10px;
+    left: 45%;
+}
+#parrafos_api{
+    top: 30px;
+    font-weight: bolder;
+    width: 250px;
+    left: 40%;
+  position:relative;
+    background-color: white;
+}
+#tablaa_api{
+    position:relative;
+    top: 60px;
+    visibility: hidden;
+    display: none;
+}
+#estrellitas_api{
+    color: yellow;
+}
  /* ----------rgb(58, 163, 36);-----------*/
 /* SECCION TECLADO*/
