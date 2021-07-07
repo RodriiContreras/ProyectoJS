@@ -206,11 +206,13 @@ var mostrarCartel = document.getElementById("cartelcarrito");
 console.log(mostrarCartel);
 var textoCartel = document.getElementById("parrafocarrito");
 console.log(textoCartel.innerText);
+
+//Seccion de agregar al carrito 
 function AgregarACarrito(){
-productosJuegos.push(new Juegos(juego1.nombre , juego1.precio * 1.21));
+productosJuegos.push(new Juegos(juego1.nombre , juego1.precio * 1.21));//Al hacer click en agregar al carrito del html correspondiente, pushea todo los valores que tenga el juego hacia el almacenador
 console.log (JSON.stringify("Se ha agregado el juego= " + juego1.nombre + " al precio de " + juego1.precio * 1.21 + " (Incluyendo IVA)"));
  $("#productoscarrito").append(`<div id="productoscarrito_item2">
- <img id="metroredux" src="../imagenes/metro.png"><h2 id="juego1">${juego1.nombre + "$"+ juego1.precio * 1.21}</h2></div>`);
+ <img id="metroredux" src="../imagenes/metro.png"><h2 id="juego1">${juego1.nombre + "$"+ juego1.precio * 1.21}</h2></div>`);//aca mando la Card del juego con el IVA ya incluido y 
 
 if(productosJuegos.push){
   textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego1.nombre;
@@ -400,18 +402,18 @@ setTimeout(function borrarelemento(){
   }
 }
 
-addEventListener('resize', () => {
-if(innerWidth < 1680){
-   document.getElementById("cartelcarrito").style.width=("250px");
-   document.getElementById("cartelcarrito").style.position=("absolute");
-   document.getElementById("cartelcarrito").style.top=('106vh');
-  }
-else (innerWidth < 1300)
-  document.getElementById("cartelcarrito").style.width=("250px");
-  document.getElementById("cartelcarrito").style.position=("absolute");
-  document.getElementById("cartelcarrito").style.top=('107vh');
-}
-)
+//addEventListener('resize', () => {
+//if(innerWidth < 1680){
+//   document.getElementById("cartelcarrito").style.width=("250px");
+//   document.getElementById("cartelcarrito").style.position=("absolute");
+//   document.getElementById("cartelcarrito").style.top=('106vh');
+//  }
+//else (innerWidth < 1300)
+//  document.getElementById("cartelcarrito").style.width=("250px");
+//  document.getElementById("cartelcarrito").style.position=("absolute");
+//  document.getElementById("cartelcarrito").style.top=('107vh');
+//}
+//)
 
 $(document).ready(function carrito(){
   $("#jquerycarrito").append(`
@@ -433,15 +435,14 @@ $(document).ready(function carrito(){
 })
 
 //----------------------
-
-function Listacarrito(){
+$("#boton_listacarrito").click(function(){
   document.getElementById("jquerycarrito").style.visibility=("visible");
-  document.getElementById("jquerycarrito").style.zIndex=("+1450");
-  document.getElementById("fondo").style.zIndex=("-509")
- console.log(productosJuegos);
-
-}
-//----------------------
+  document.getElementById("opacidadcarrito").style.visibility=("visible");
+  document.getElementById("opacidadcarrito").style.zIndex=("+1000");
+  document.getElementById("opacidadcarrito").style.top=("100vh");
+  document.getElementById("opacidadcarrito").style.width=("100%");
+  document.getElementById("opacidadcarrito").style.height=("100%");
+});
 
 $("#vaciarcarrito").click(function(){
   $("#productoscarrito").empty();
@@ -460,51 +461,45 @@ function Vaciarcarrito(){
 
     function Cerrarcarrito(){
       document.getElementById("jquerycarrito").style.visibility=("hidden");
+      document.getElementById("opacidadcarrito").style.visibility=("hidden");
+      document.getElementById("opacidadcarrito").style.zIndex=("-1000");
     }
-    ///------BOTON API----
-//const URLGET = "https://api.rawg.io/api/platforms?key=a5c1bd60a8b349218f8f35b843dcaaa7"
+///------BOTON API----
+
 const URLGET = "https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7"
 const data = [];
 
 
-
-
-$(document).ready(function(){
-  obtenerdatos()
-});
-
-
-//function obtenerdatos(){
-//$.get("https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7").done(function(resultado,estado){
-//console.log(estado);
-//console.log(resultado)
-//if (estado == "success"){
-//  let datos = resultado.results;
-//console.log(datos)
-//
-//  datos.forEach(Juegosapi => {
-// $("#parrafos_api").append( "<tr><td>" + Juegosapi.name +"</td><td>" +Juegosapi.id + "</td></tr>")
-//});
-//}
-//})
-//}
-
-
-$("#boton_api").click( () =>{
-  $.get("https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7").done(function(resultado,estado){
-if (estado == "success"){
-  //document.getElementById("fondo").style.height=("150vh")
-
+$("#boton_api").click( () =>{//evento de click 
+  $.get("https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7").done(function(resultado,estado){//Toma la url de la Api que estoy dando,hago una funcion con dos  parametros para ver si los esta tomando correctamente
+if (estado == "success"){//Si es estado es "Success" (Osea que pudo ingresar a los datos de mi Api,que ejecute "x" accion)
   document.getElementById("tablaa_api").style.visibility=("visible");
   document.getElementById("tablaa_api").style.display=("table")
-let datos = resultado.results;
-  datos.forEach(Juegosapi => {
+
+  // if(innerWidth < 1680){
+  //   document.getElementById("footer").style.marginTop=("60px")
+  //  }
+  //  if(innerWidth > 1680){
+  //   document.getElementById("fondo").style.height=("100vh")
+  //  }
+
+
+let datos = resultado.results;//hago un Let de datos para poder usarlo con el forEach, y el "results" es porque estoy accediendo a la parte del array que a mi me interesa(los juegos).
+  datos.forEach(Juegosapi => {//Hago un foreach para que vaya recorriendo cada juego de mi api, y que la coloque en una celda 
     $("#tbody_api").append(`<tr>
     <th scope="row">${Juegosapi.id}</th>
-    <td>${Juegosapi.name}</td>
+    <td>${Juegosapi.name} <i class="fab fa-playstation"></i></td>
     <td> <i id="estrellitas_api"class="fas fa-star"> </i>${Juegosapi.rating}</td>
-  </tr>`)
+  </tr>`)//Toma diferentes propiedades del array que me transporta, en este caso yo elegi "ID", "NAME", "RATING"
    });
    }
   })
 })
+
+// MEDIA QUERIE DE LOS ELEMENTOS DOM 
+
+// if(innerWidth < 1680){
+//   document.getElementById("fondo").style.height=("130vh")
+//   document.getElementById("footer").style.marginTop=("280px")
+//   document.getElementById("boton_api").style.marginTop=("280px")
+//  }
