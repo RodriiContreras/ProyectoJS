@@ -82,7 +82,26 @@
         </a>
     </div>
     <button type="button" id="boton_listacarrito" onclick="Listacarrito()" class="btn btn-primary vercarrito">Ver lista carrito<i class="fas fa-shopping-cart"></i></button>
-<div id="jquerycarrito"></div>
+<div id="jquerycarrito">
+    <div id="containercarrito">
+    <div id="nombreproducto">
+              <h1>Su Carrito
+              <i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:
+              </h1>
+    </div>
+       <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito</button> 
+       <button type="Button" id="compracarrito" class="btn btn-primary" onclick="Realizarcompra()">Realizar compra</button> 
+       <button type="Button" id="cerrarcarrito" class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
+     <div id="productoscarrito">
+     </div>
+  </div></div>
+<div id="jquerycompra">
+    <div id="containercompra">
+        <h1>Realizar Compra</h1>
+        <button class="btn btn-primary">Realizar Pago</button>
+        <button class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar carrito</button>
+    </div>
+</div>
 <div id="opacidadcarrito"></div>
 <div class="containerflex">
        <div class="itemflex_metro">
@@ -152,6 +171,7 @@
 </div>
 <button id="boton_api" class="btn btn-outline-danger">PROXIMAMENTE</button>
 <table id="tablaa_api" class="table table-dark table-hover">
+</div>
     <thead>
       <tr>
         <th scope="col">Id del juego</th>
@@ -164,7 +184,6 @@
     </tbody>
   </table>
 <div id="parrafos_api"></div>
-
 <div id="footer">
     <a href="https://www.instagram.com/?hl=es-la"><i class="fab fa-instagram redes"></i></a>
     <a href="https://www.facebook.com/"><i class="fab fa-facebook redes"></i></a>

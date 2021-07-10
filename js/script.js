@@ -415,24 +415,24 @@ setTimeout(function borrarelemento(){
 //}
 //)
 
-$(document).ready(function carrito(){
-  $("#jquerycarrito").append(`
-<div id="containercarrito">
-  <div id="nombreproducto">
-            <h1>Su Carrito
-            <i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:
-            </h1>
-  </div>
-     <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito</button> 
-     <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="">Realizar compra</button> 
-     <button type="Button" id="cerrarcarrito" class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
-   <div id="productoscarrito">
-   </div>
-</div>
-  
-`);
- 
-})
+//$(document).ready(function carrito(){
+//  $("#jquerycarrito").append(`
+//<div id="containercarrito">
+//  <div id="nombreproducto">
+//            <h1>Su Carrito
+//            <i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:
+//            </h1>
+//  </div>
+//     <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito</button> 
+//     <button type="Button" id="compracarrito" class="btn btn-primary" onclick="Realizarcompra()">Realizar compra</button> 
+//     <button type="Button" id="cerrarcarrito" class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
+//   <div id="productoscarrito">
+//   </div>
+//</div>
+//  
+//`);
+// 
+//})
 
 //----------------------
 $("#boton_listacarrito").click(function(){
@@ -444,14 +444,6 @@ $("#boton_listacarrito").click(function(){
   document.getElementById("opacidadcarrito").style.height=("100%");
 });
 
-$("#vaciarcarrito").click(function(){
-  $("#productoscarrito").empty();
-  console.log("este evento esta sucediendo")
-});
-function Vaciarcarrito(){
-  $("#productoscarrito").empty();
-  console.log("este evento sucede")
-}
 
     function Listacarrito(){
      
@@ -463,6 +455,7 @@ function Vaciarcarrito(){
       document.getElementById("jquerycarrito").style.visibility=("hidden");
       document.getElementById("opacidadcarrito").style.visibility=("hidden");
       document.getElementById("opacidadcarrito").style.zIndex=("-1000");
+      document.getElementById("jquerycompra").style.visibility=("hidden");
     }
 ///------BOTON API----
 
@@ -496,10 +489,22 @@ let datos = resultado.results;//hago un Let de datos para poder usarlo con el fo
   })
 })
 
-// MEDIA QUERIE DE LOS ELEMENTOS DOM 
+function sumatotal(){
+  let total = 0;
+productosJuegos.forEach(juegosprecio =>{ //Toma el valor de cada juego que hay en el almacenador ProductosJuego
+  total += Number(juegosprecio.precio)
+})
+console.log(total)
 
-// if(innerWidth < 1680){
-//   document.getElementById("fondo").style.height=("130vh")
-//   document.getElementById("footer").style.marginTop=("280px")
-//   document.getElementById("boton_api").style.marginTop=("280px")
-//  }
+if (productosJuegos !== length > 0 ){
+  $("#containercarrito").append(`<p id="carrito_total">${"Precio = $" +total}</p>`)
+}
+}
+$("#compracarrito").click(function(){
+  document.getElementById("jquerycompra").style.visibility=("visible");
+})
+
+function Vaciarcarrito(){
+  $("#productoscarrito").empty();
+  console.log("este evento sucede") 
+}
