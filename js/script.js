@@ -31,11 +31,11 @@ window.sr = ScrollReveal();
 // -----------------------------------------------------------------------------------FIN SECCION "SCROLLREVEAL"-----------------------------------------
 
 // -----------------------------Login ----------------------------
-var botonLoguer = document.getElementById("botonlogueo");
-botonLoguer.addEventListener("click",Login)
+var botonLoguer = document.getElementById("botonlogueo");//Manipulo el dom del Logueo
+botonLoguer.addEventListener("click",Login)//genero un evento de tipo CLICK
 var formulario = document.getElementById("formulariologueo");
 var opacidad = document.getElementById("overlay");
-function Login(){//boton para mostrar ventana de logueo y registro
+function Login(){//boton para mostrar ventana de logueo y registro 
   document.getElementById("formulariologueo").style.visibility=("visible")
   document.getElementById("formulariologueo").style.zIndex=("+4000")
   document.getElementById("overlay").style.backgroundColor=("rgba(0, 0, 0, 0.747)")
@@ -82,10 +82,8 @@ if(document.getElementById("registro_nombreusuario").value == length > 1 && docu
   document.getElementById("register_parrafo").innerText=("Por lo menos debe ingresar una letra en los campos")
   document.getElementById("register_parrafo").style.color=("red")
   console.log("mal")
-//document.getElementById("formulariologueo").style.visibility=("hidden")
-//document.getElementById("formulariologueo").style.zIndex=("+4000")
-//document.getElementById("overlay").style.backgroundColor=("rgba(0, 0, 0, 0.747)")
-//document.getElementById("overlay").style.zIndex=("+1000")
+  // hago un condicional en caso de que no se escriba nada en el logueo y que obligue al usuario a escribir algo en los input.
+  // LOS "&&" significan que ademas de "x" condicion, tambien tienen que cumplir otra condiciones que yo ponga para que se ejecute la accion del formulario
 }
 else if(document.getElementById("registro_email").value == length > 1 ){
   document.getElementById("register_parrafo").innerText=("Por lo menos debe ingresar una letra en el campo de Email")
@@ -104,6 +102,8 @@ else{
   document.getElementById("overlay").style.zIndex=("+1000")
   
 }
+
+
 
 
 sessionStorage.setItem("registrousuario",NombreUsuario);
@@ -174,10 +174,10 @@ const almacenadorlog = []
 //rgba(0, 0, 0, 0.404)rgba(0, 0, 0, 0.747)
 
 // -----------------------------Login ----------------------------
-class Juegos {
+class Juegos {//hago un constructor para generar mis objetos
     constructor (nombre, precio) {
-        this.nombre  = nombre;
-        this.precio  = parseFloat(precio);
+        this.nombre  = nombre;//genero una propiedad del objeto, en este caso nombre 
+        this.precio  = parseFloat(precio);//segunda propiedad de mis objetos, en este caso PRECIO
       }
 }
 const juego1 = new Juegos("Metro Redux ", "2000")
@@ -201,20 +201,22 @@ console.log(juego9);
 const juego10 = new Juegos("Ghost Of Tsushima", "3500");
 console.log(juego10);
 const blanco = " "
-let productosJuegos = []
-var mostrarCartel = document.getElementById("cartelcarrito");
+let productosJuegos = [] // almacenador de juegos
+var mostrarCartel = document.getElementById("cartelcarrito");//Tomo con el DOM el cartelcarrito para hacer el evento
 console.log(mostrarCartel);
 var textoCartel = document.getElementById("parrafocarrito");
 console.log(textoCartel.innerText);
 
 //Seccion de agregar al carrito 
+
+// ACLARACIÓN =LO EXPLICADO EN "AgregarACarrito" ocurre en todas las otros botones, por eso no gasto lineas de comentario en cada una.
 function AgregarACarrito(){
 productosJuegos.push(new Juegos(juego1.nombre , juego1.precio * 1.21));//Al hacer click en agregar al carrito del html correspondiente, pushea todo los valores que tenga el juego hacia el almacenador
 console.log (JSON.stringify("Se ha agregado el juego= " + juego1.nombre + " al precio de " + juego1.precio * 1.21 + " (Incluyendo IVA)"));
  $("#productoscarrito").append(`<div id="productoscarrito_item2">
- <img id="metroredux" src="../imagenes/metro.png"><h2 id="juego1">${juego1.nombre + "$"+ juego1.precio * 1.21}</h2></div>`);//aca mando la Card del juego con el IVA ya incluido y 
+ <img id="metroredux" src="../imagenes/metro.png"><h2 id="juego1">${juego1.nombre + "$"+ juego1.precio * 1.21}</h2></div>`);//aca mando la Card del juego  al carrito con su respectivo nombre y precio (SUMADO CON IVA)
 
-if(productosJuegos.push){
+if(productosJuegos.push){//hago un condicional,que hace que muestre al hacer click un cartel de "se ha agregado a carrito "x" juego."    
   textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego1.nombre;
   mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("visible")
    mostrarCartel = document.getElementById("cartelcarrito").style.color=("white")
@@ -222,9 +224,9 @@ if(productosJuegos.push){
   mostrarCartel = document.getElementById("cartelcarrito").style.background=("black")
   }
    
-    setTimeout(function borrarelemento(){
+    setTimeout(function borrarelemento(){//la funcion de SetTimeout hace que el cartel desaparezca tras Unos segundos
       mostrarCartel = document.getElementById("cartelcarrito").style.visibility=("hidden")
-    },600);
+    },600);//el Numero "600" es el tiempo que va a estar el cartel
     
 }
 
@@ -234,7 +236,7 @@ function AgregarACarrito2(){
 console.log(JSON.stringify("Se ha agregado el juego= " + juego2.nombre + " al precio de " + juego2.precio * 1.21 + " (Incluyendo IVA)"));
 
  $("#productoscarrito").append(`<div id="productoscarrito_item"><img id="residentevil" src="../imagenes/residentevil.jpg">
-<h2 id="juego2">${juego2.nombre + blanco + "$"+ juego2.precio}</h2></div>
+<h2 id="juego2">${juego2.nombre + blanco + "$"+ juego2.precio * 1.21}</h2></div>
 `);
 
 if(productosJuegos.push){
@@ -293,7 +295,7 @@ function AgregarACarrito5(){
 productosJuegos.push(new Juegos(juego5.nombre, juego5.precio * 1.21));
 console.log(JSON.stringify("Se ha agregado el juego= " + juego5.nombre + " al precio de " + juego5.precio * 1.21 + " (Incluyendo IVA)"));
  $("#productoscarrito").append(`<div id="productoscarrito_item5"><img id="carrito_cod" src="../imagenes/callofduty.jpg">
-<h2 id="juego5">${juego5.nombre +blanco+"$"+ juego5.precio}</h2></div>
+<h2 id="juego5">${juego5.nombre +blanco+"$"+ juego5.precio * 1.21}</h2></div>
 `);
 if(productosJuegos.push){
 textoCartel = document.getElementById("parrafocarrito").textContent= "Se Ha agregado a carrito " + juego5.nombre;
@@ -401,41 +403,7 @@ setTimeout(function borrarelemento(){
 
   }
 }
-
-//addEventListener('resize', () => {
-//if(innerWidth < 1680){
-//   document.getElementById("cartelcarrito").style.width=("250px");
-//   document.getElementById("cartelcarrito").style.position=("absolute");
-//   document.getElementById("cartelcarrito").style.top=('106vh');
-//  }
-//else (innerWidth < 1300)
-//  document.getElementById("cartelcarrito").style.width=("250px");
-//  document.getElementById("cartelcarrito").style.position=("absolute");
-//  document.getElementById("cartelcarrito").style.top=('107vh');
-//}
-//)
-
-//$(document).ready(function carrito(){
-//  $("#jquerycarrito").append(`
-//<div id="containercarrito">
-//  <div id="nombreproducto">
-//            <h1>Su Carrito
-//            <i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:
-//            </h1>
-//  </div>
-//     <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito</button> 
-//     <button type="Button" id="compracarrito" class="btn btn-primary" onclick="Realizarcompra()">Realizar compra</button> 
-//     <button type="Button" id="cerrarcarrito" class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
-//   <div id="productoscarrito">
-//   </div>
-//</div>
-//  
-//`);
-// 
-//})
-
-//----------------------
-$("#boton_listacarrito").click(function(){
+$("#boton_listacarrito").click(function(){//cambio las propiedades de visibilidad de cada objeto
   document.getElementById("jquerycarrito").style.visibility=("visible");
   document.getElementById("opacidadcarrito").style.visibility=("visible");
   document.getElementById("opacidadcarrito").style.zIndex=("+1000");
@@ -445,22 +413,22 @@ $("#boton_listacarrito").click(function(){
 });
 
 
-    function Listacarrito(){
+    function Listacarrito(){//cambio las propiedades de visibilidad de cada objeto
      
      document.getElementById("jquerycarrito").style.visibility=("visible");
     }
 
 
-    function Cerrarcarrito(){
+    function Cerrarcarrito(){//cambio las propiedades de visibilidad de cada objeto
       document.getElementById("jquerycarrito").style.visibility=("hidden");
       document.getElementById("opacidadcarrito").style.visibility=("hidden");
       document.getElementById("opacidadcarrito").style.zIndex=("-1000");
       document.getElementById("jquerycompra").style.visibility=("hidden");
     }
+
+
 ///------BOTON API----
 
-const URLGET = "https://api.rawg.io/api/games?key=a5c1bd60a8b349218f8f35b843dcaaa7"
-const data = [];
 
 
 $("#boton_api").click( () =>{//evento de click 
@@ -468,13 +436,6 @@ $("#boton_api").click( () =>{//evento de click
 if (estado == "success"){//Si es estado es "Success" (Osea que pudo ingresar a los datos de mi Api,que ejecute "x" accion)
   document.getElementById("tablaa_api").style.visibility=("visible");
   document.getElementById("tablaa_api").style.display=("table")
-
-  // if(innerWidth < 1680){
-  //   document.getElementById("footer").style.marginTop=("60px")
-  //  }
-  //  if(innerWidth > 1680){
-  //   document.getElementById("fondo").style.height=("100vh")
-  //  }
 
 
 let datos = resultado.results;//hago un Let de datos para poder usarlo con el forEach, y el "results" es porque estoy accediendo a la parte del array que a mi me interesa(los juegos).
@@ -489,22 +450,28 @@ let datos = resultado.results;//hago un Let de datos para poder usarlo con el fo
   })
 })
 
-function sumatotal(){
-  let total = 0;
-productosJuegos.forEach(juegosprecio =>{ //Toma el valor de cada juego que hay en el almacenador ProductosJuego
-  total += Number(juegosprecio.precio)
-})
-console.log(total)
 
-if (productosJuegos !== length > 0 ){
-  $("#containercarrito").append(`<p id="carrito_total">${"Precio = $" +total}</p>`)
-}
-}
 $("#compracarrito").click(function(){
   document.getElementById("jquerycompra").style.visibility=("visible");
-})
+  let total = 0;//asigno un valor inicial de total
+  let parrafototal = document.getElementById("carrito_totalpago")
+  productosJuegos.forEach(juegosprecio =>{//Hago un for Each que recorre cada juego que haya clickeado el usuario y sea enviado a Productos juegos, tomo el valor de los precios, y los sumo entre si.
+    total += Number(juegosprecio.precio)
+    })
+    if (productosJuegos !== length > 0 ){
+      parrafototal.textContent= "Total = $" + total;
+    }
+    else if (productosJuegos == length < 0 ){
+      parrafototal.textContent= "Total = $0"
+    }
+  })    
+
 
 function Vaciarcarrito(){
-  $("#productoscarrito").empty();
+  let parrafototalvacio = document.getElementById("carrito_totalpago").textContent
+  console.log(parrafototalvacio)
+  productosJuegos = [] //poniendo el "[]" hace que quede vacio mi almacenador de juegos
+  console.log(productosJuegos)
+  $("#productoscarrito").empty();//borra todos los apend que haya en el carrito
   console.log("este evento sucede") 
 }

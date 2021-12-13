@@ -79,6 +79,14 @@ background-color: black;
     flex-wrap: wrap;
     
 }
+#contenedorbotones{
+position: absolute;
+top: 65vh;
+left: 12%;
+}
+#carrito_totalpago{
+    font-size: 40px;
+}
 #jquerycompra{
     border:1px solid black;
     background-color: white;
@@ -90,6 +98,12 @@ background-color: black;
     left: 35%;
     top: 115vh;
 visibility: hidden;
+}
+#carrito_preciopago{
+    font-size: 40px;
+    position: absolute;
+    left: 150px;
+    top: 600px;
 }
 #carrito_total{
     position: absolute;

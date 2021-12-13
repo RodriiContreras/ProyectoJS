@@ -85,21 +85,26 @@
 <div id="jquerycarrito">
     <div id="containercarrito">
     <div id="nombreproducto">
-              <h1>Su Carrito
+              <h1>Su Carrito (Con IVA incluido)
               <i id="jquerycarrito_carrito" class="fas fa-shopping-cart"></i>:
               </h1>
     </div>
-       <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito</button> 
-       <button type="Button" id="compracarrito" class="btn btn-primary" onclick="Realizarcompra()">Realizar compra</button> 
+    <div id="contenedorbotones">
+       <button type="Button" id="vaciarcarrito" class="btn btn-primary" onclick="Vaciarcarrito()">Vaciar Carrito <i class="fas fa-trash-alt"></i></button> 
+       <button type="Button" id="compracarrito" class="btn btn-primary" >Realizar compra <i class="fas fa-dollar-sign"></i></button> 
        <button type="Button" id="cerrarcarrito" class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
+    </div>
      <div id="productoscarrito">
      </div>
   </div></div>
 <div id="jquerycompra">
     <div id="containercompra">
         <h1>Realizar Compra</h1>
-        <button class="btn btn-primary">Realizar Pago</button>
-        <button class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar carrito</button>
+        <button class="btn btn-primary">Realizar Pago <i class="fas fa-dollar-sign"></i></button>
+        <button class="btn btn-primary" onclick="Cerrarcarrito()">Cerrar Carrito</button>
+        <div id="carrito_preciopago">
+            <p id="carrito_totalpago"></p>
+        </div>
     </div>
 </div>
 <div id="opacidadcarrito"></div>
